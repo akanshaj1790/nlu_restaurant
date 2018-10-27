@@ -7,9 +7,9 @@ from rasa_slack_connector import SlackInput
 nlu_interpreter = RasaNLUInterpreter('./models/nlu/default/restaurantnlu')
 agent = Agent.load('./models/dialogue', interpreter = nlu_interpreter)
 
-input_channel = SlackInput('xoxp-359418684578-360311923670-373479391381-faf4e29bddac4cd131221b8cf0ffa627', #app verification token
-							'xoxb-359418684578-372796513233-gHxeV6CHQFl8MPkZVrPHBsnQ', # bot verification token
-							'7uAoXNmNANaqCa9WpALV9EhR', # slack verification token
+input_channel = SlackInput('xoxp-465091562931-465017512964-465024487348-24c5043b6286207eed57f0cd0fccf988', #app verification token
+							'xoxb-465091562931-464459251456-K3wPb0C9LU1fTXSHopTZkKYX', # bot verification token
+							'5umlFTkIKkWU0fMkTbydSfvX', # slack verification token
 							True)
 
 agent.handle_channel(HttpInputChannel(5004, '/', input_channel))
