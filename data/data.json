@@ -542,6 +542,54 @@
             "entity": "location"
           }
         ]
+      },
+      {
+        "text": "Find me a restaurant in the price range of Rs 300 to Rs 700",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 43,
+            "end": 59,
+            "value": "Rs 300 to Rs 700",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "find me a restaurant in Mumbai where average cost of 2 people is greater than 700",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 65,
+            "end": 81,
+            "value": "greater than 700",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "Looking for a Chinese restaurant in the range of 300 to 700",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 40,
+            "end": 59,
+            "value": "range of 300 to 700",
+            "entity": "price"
+          }
+        ]
+      },
+      {
+        "text": "Looking for a mid range restaurant",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 14,
+            "end": 17,
+            "value": "mid",
+            "entity": "price"
+          }
+        ]
       }
     ]
   }

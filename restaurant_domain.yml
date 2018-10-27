@@ -3,10 +3,13 @@ slots:
     type: text
   cuisine:
     type: text
+  price:
+    type: text
 
 entities:
 - location
 - cuisine
+- price
 
 intents:
  - greet
@@ -32,12 +35,25 @@ templates:
       buttons:
       - title: "Chinese"
         payload: "Chinese"
+      - title: "Mexican"
+        payload: "Mexican"
       - title: "Italian"
         payload: "Italian"
+      - title: "American"
+        payload: "American"
       - title: "South Indian"
         payload: "South Indian"
       - title: "North Indian"
         payload: "North Indian"
+  utter_ask_pricerange: 
+    - text: "What price range are you looking at?"
+      buttons:
+      - title: "Lesser than Rs. 300"
+        payload: "press 1"
+      - title: "Rs. 300 to 700"
+        payload: "press 2"
+      - title: "More than 700"
+        payload: "press 3"
   utter_ask_howcanhelp:
     - "how can I help you?"
   utter_ask_location:
@@ -51,3 +67,4 @@ actions:
 - utter_ask_location
 - utter_ask_cuisine
 - actions.ActionSearchRestaurants
+- utter_ask_pricerange
