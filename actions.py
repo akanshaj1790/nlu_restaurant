@@ -34,15 +34,14 @@ class ActionSearchRestaurants(Action):
 		lon=d1["location_suggestions"][0]["longitude"]
 		cuisines_dict={'bakery':5,'chinese':25,'cafe':30,'italian':55,'biryani':7,'north indian':50,'south indian':85,'american':1,'mexican':73}
 		results=zomato.restaurant_search("", lat, lon, str(cuisines_dict.get(cuisine)),price_min, price_max, 5)
-		print(results)
 		d = json.loads(results)
 		response=""
 		if d['results_found'] == 0:
 			response= "no results"
 		else:
 			for restaurant in d['restaurants']:
-				response=response+ "Found "+ restaurant['restaurant']['name']+ " in "+ restaurant['restaurant']['location']['address']+"\n"
-		
+				response=response+ "Found "+ restaurant['restaurant']['name']+ " in "+ restaurant['restaurant']['location']['address']+ "has been rated" + restaurant['restaurant']['user_rating']['aggregate_rating'] +"\n"
+
 		dispatcher.utter_message("-----"+response)
 		return [SlotSet('location',loc)]
 
