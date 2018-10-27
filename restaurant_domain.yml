@@ -19,7 +19,6 @@ intents:
  - thankyou
  - restaurant_search
 
-
 templates:
   utter_greet:
     - "hey there! How may i help you"
@@ -59,6 +58,17 @@ templates:
   utter_ask_location:
     - "In what location?"
 
+action_names:
+- utter_greet
+- utter_goodbye
+- utter_default
+- utter_ask_howcanhelp
+- utter_ask_location
+- utter_ask_cuisine
+- action_restaurant
+- utter_ask_pricerange
+- action_check_location
+
 actions:
 - utter_greet
 - utter_goodbye
@@ -68,3 +78,4 @@ actions:
 - utter_ask_cuisine
 - actions.ActionSearchRestaurants
 - utter_ask_pricerange
+- actions.ActionCheckLocation

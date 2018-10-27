@@ -8,6 +8,7 @@ action_names:
 - utter_ask_cuisine
 - action_restaurant
 - utter_ask_pricerange
+- action_check_location
 actions:
 - utter_greet
 - utter_goodbye
@@ -17,6 +18,7 @@ actions:
 - utter_ask_cuisine
 - actions.ActionSearchRestaurants
 - utter_ask_pricerange
+- actions.ActionCheckLocation
 config:
   store_entities_as_slots: true
 entities:

@@ -3,6 +3,7 @@
     - utter_greet
 * restaurant_search
     - utter_ask_location
+	- action_check_location
 * restaurant_search
     - utter_ask_cuisine
 * restaurant_search{"cuisine": "chinese"}

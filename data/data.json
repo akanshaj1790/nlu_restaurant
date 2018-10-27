@@ -18,6 +18,26 @@
           "Chines",
           "chines"
         ]
+      },[
+      {
+        "value": "bangalore",
+        "synonyms": [
+          "Bangalore",
+          "Bengaluru",
+          "bengaluru",
+		  "Blore",
+		  "blore",
+		  "banglore",
+		  "Bangalore"
+        ]
+      },[
+      {
+        "value": "mumbai",
+        "synonyms": [
+          "bombay",
+          "Bombay",
+          "Mumbai"
+        ]
       },
       {
         "value": "vegetarian",

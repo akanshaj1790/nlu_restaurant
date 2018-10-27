@@ -38,6 +38,7 @@
 * restaurant_search
     - utter_ask_location
 * restaurant_search{"location": "italy"}
+	- action_check_location
     - slot{"location": "italy"}
 	- utter_ask_cuisine
 * restaurant_search{"cuisine": "chinese"}
@@ -55,6 +56,7 @@
 * restaurant_search
     - utter_ask_location
 * restaurant_search{"location": "delhi"}
+	- action_check_location
     - slot{"location": "delhi"}
     - utter_ask_cuisine
 * restaurant_search{"cuisine": "chinese"}
@@ -68,6 +70,7 @@
 * greet
     - utter_greet
 * restaurant_search{"location": "delhi"}
+	- action_check_location
     - slot{"location": "delhi"}
     - utter_ask_cuisine
 * restaurant_search{"cuisine": "chinese"}
@@ -85,9 +88,29 @@
 * greet
     - utter_greet
 * restaurant_search{"cuisine": "mexican", "location": "pune" , "price": "1"}
+	- action_check_location
     - slot{"cuisine": "mexican"}
     - slot{"location": "pune"}
 	- slot{"price": "1"}
     - action_restaurant
     - slot{"location": "pune"}
     - export
+## Generated Story -6232213065080115956
+* greet
+    - utter_greet
+* restaurant_search
+    - utter_ask_location
+* restaurant_search
+    - action_check_location
+    - slot{"location": null}
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "chinese"}
+    - slot{"cuisine": "chinese"}
+    - utter_ask_pricerange
+* restaurant_search
+    - action_restaurant
+    - slot{"location": null}
+* affirm
+    - utter_goodbye
+    - export
+
