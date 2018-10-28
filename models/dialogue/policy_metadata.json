@@ -2,14 +2,20 @@
   "action_fingerprints": {
     "action_listen": {
       "slots": [
-        "price",
+        "cuisine",
         "location",
-        "cuisine"
+        "price"
       ]
     },
-    "action_restaurant": {
+    "utter_ask_pricerange": {
       "slots": [
-        "location"
+        "price"
+      ]
+    },
+    "utter_ask_mail": {
+      "slots": [
+        "location",
+        "email"
       ]
     },
     "utter_goodbye": {
@@ -18,8 +24,23 @@
     "action_check_location": {
       "slots": [
         "cuisine",
-        "price",
+        "location",
+        "price"
+      ]
+    },
+    "action_restaurant": {
+      "slots": [
         "location"
+      ]
+    },
+    "action_cuisine_valid": {
+      "slots": [
+        "cuisine"
+      ]
+    },
+    "action_send_mail": {
+      "slots": [
+        "email"
       ]
     }
   },

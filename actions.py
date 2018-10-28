@@ -79,8 +79,7 @@ class ActionCheckLocation(Action):
 			msg="We do not operate in that area yet!"
 			dispatcher.utter_message("----"+msg)
 			return [SlotSet('location','None')]
-		
-		
+
 class ActionValidateEmail(Action):
 	def name(self):
 		return 'action_validate_email'
@@ -97,4 +96,18 @@ class ActionValidateEmail(Action):
 		else:
 			dispatcher.utter_message("Re-tpye email again !! ")
 			return[SlotSet('email', None)]
+
+			
+class ActionSendEmail(Action):
+	def name(self):
+		return 'action_send_mail'
+		
+	def run(self, dispatcher, tracker, domain):
+		tracker_email = tracker.get_slot('email')
+		if tracker_email is not None:
+			dispatcher.utter_message("Email Sent")
+			return[SlotSet('email',tracker_email)]
+		else:
+			dispatcher.utter_message("We cannot send the details over email")
+			return[SlotSet('email',None)]
 			

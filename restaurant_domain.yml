@@ -21,6 +21,7 @@ intents:
  - goodbye
  - thankyou
  - restaurant_search
+ - send_email
 
 templates:
   utter_greet:
@@ -60,6 +61,8 @@ templates:
     - "how can I help you?"
   utter_ask_location:
     - "In what location?"
+  utter_ask_mail:
+    - "Do you want the result in email?"
 
 action_names:
 - utter_greet
@@ -73,6 +76,8 @@ action_names:
 - action_check_location
 - action_cuisine_valid
 - action_validate_email
+- utter_ask_mail
+- action_send_mail
 
 actions:
 - utter_greet
@@ -86,3 +91,5 @@ actions:
 - actions.ActionCheckLocation
 - actions.ActionCuisineValidation
 - actions.ActionValidateEmail
+- utter_ask_mail
+- actions.ActionSendEmail

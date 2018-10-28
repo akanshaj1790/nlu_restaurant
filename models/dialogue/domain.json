@@ -6,6 +6,7 @@
     "intent_goodbye",
     "intent_thankyou",
     "intent_restaurant_search",
+    "intent_send_email",
     "entity_location",
     "entity_cuisine",
     "entity_price",
@@ -27,6 +28,8 @@
     "prev_utter_ask_pricerange",
     "prev_action_check_location",
     "prev_action_cuisine_valid",
-    "prev_action_validate_email"
+    "prev_action_validate_email",
+    "prev_utter_ask_mail",
+    "prev_action_send_mail"
   ]
 }

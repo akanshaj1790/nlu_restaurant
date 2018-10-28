@@ -11,6 +11,8 @@ action_names:
 - action_check_location
 - action_cuisine_valid
 - action_validate_email
+- utter_ask_mail
+- action_send_mail
 actions:
 - utter_greet
 - utter_goodbye
@@ -23,6 +25,8 @@ actions:
 - actions.ActionCheckLocation
 - actions.ActionCuisineValidation
 - actions.ActionValidateEmail
+- utter_ask_mail
+- actions.ActionSendEmail
 config:
   store_entities_as_slots: true
 entities:
@@ -37,6 +41,7 @@ intents:
 - goodbye
 - thankyou
 - restaurant_search
+- send_email
 slots:
   cuisine:
     initial_value: null
@@ -70,6 +75,8 @@ templates:
   - text: how can I help you?
   utter_ask_location:
   - text: In what location?
+  utter_ask_mail:
+  - text: Do you want the result in email?
   utter_ask_pricerange:
   - buttons:
     - payload: press 1
