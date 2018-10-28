@@ -9,6 +9,8 @@ action_names:
 - action_restaurant
 - utter_ask_pricerange
 - action_check_location
+- action_cuisine_valid
+- action_validate_email
 actions:
 - utter_greet
 - utter_goodbye
@@ -19,12 +21,15 @@ actions:
 - actions.ActionSearchRestaurants
 - utter_ask_pricerange
 - actions.ActionCheckLocation
+- actions.ActionCuisineValidation
+- actions.ActionValidateEmail
 config:
   store_entities_as_slots: true
 entities:
 - location
 - cuisine
 - price
+- email
 intents:
 - greet
 - affirm
@@ -34,6 +39,9 @@ intents:
 - restaurant_search
 slots:
   cuisine:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  email:
     initial_value: null
     type: rasa_core.slots.TextSlot
   location:

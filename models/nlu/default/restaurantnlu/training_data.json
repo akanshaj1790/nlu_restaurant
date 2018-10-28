@@ -532,6 +532,54 @@
           }
         ],
         "text": "Looking for a mid range restaurant"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 6,
+            "value": "bombay",
+            "entity": "location"
+          }
+        ],
+        "text": "bombay"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 4,
+            "value": "Pune",
+            "entity": "location"
+          }
+        ],
+        "text": "Pune"
+      },
+      {
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 64,
+            "end": 81,
+            "value": "akansha@gmail.com",
+            "entity": "people"
+          },
+          {
+            "start": 44,
+            "end": 48,
+            "value": "pune",
+            "entity": "location"
+          },
+          {
+            "start": 21,
+            "end": 28,
+            "value": "mexican",
+            "entity": "cuisine"
+          }
+        ],
+        "text": "send details of some mexican restaurants in pune on my email id akansha@gmail.com"
       }
     ],
     "regex_features": [
@@ -551,6 +599,22 @@
           "Chinese",
           "Chines",
           "chines"
+        ]
+      },
+      {
+        "value": "bangalore",
+        "synonyms": [
+          "Bangalore",
+          "Bengaluru",
+          "bengaluru"
+        ]
+      },
+      {
+        "value": "mumbai",
+        "synonyms": [
+          "Mumbai",
+          "Bombay",
+          "bombay"
         ]
       },
       {

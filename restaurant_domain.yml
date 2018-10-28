@@ -5,11 +5,14 @@ slots:
     type: text
   price:
     type: text
+  email:
+    type: text
 
 entities:
 - location
 - cuisine
 - price
+- email
 
 intents:
  - greet
@@ -68,6 +71,8 @@ action_names:
 - action_restaurant
 - utter_ask_pricerange
 - action_check_location
+- action_cuisine_valid
+- action_validate_email
 
 actions:
 - utter_greet
@@ -79,3 +84,5 @@ actions:
 - actions.ActionSearchRestaurants
 - utter_ask_pricerange
 - actions.ActionCheckLocation
+- actions.ActionCuisineValidation
+- actions.ActionValidateEmail

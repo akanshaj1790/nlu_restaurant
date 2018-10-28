@@ -5,9 +5,11 @@
     - utter_ask_location
 * restaurant_search{"location": "delhi"}
     - slot{"location": "delhi"}
+	- action_check_location
     - utter_ask_cuisine
 * restaurant_search{"cuisine": "chinese"}
     - slot{"cuisine": "chinese"}
+	- action_cuisine_valid
 	- utter_ask_pricerange
 * restaurant_search{"price": "1"}
 	- slot {"price" : "1"}
@@ -23,9 +25,11 @@
     - utter_ask_location
 * restaurant_search{"location": "delhi"}
     - slot{"location": "delhi"}
+	- action_check_location
     - utter_ask_cuisine
 * restaurant_search{"cuisine": "North Indian"}
     - slot{"cuisine": "North Indian"}
+	- action_cuisine_valid
 	- utter_ask_pricerange
 * restaurant_search{"price": "3"}
 	- slot {"price" : "3"}
@@ -38,11 +42,12 @@
 * restaurant_search
     - utter_ask_location
 * restaurant_search{"location": "italy"}
-	- action_check_location
     - slot{"location": "italy"}
+	- action_check_location
 	- utter_ask_cuisine
 * restaurant_search{"cuisine": "chinese"}
     - slot{"cuisine": "chinese"}
+	- action_cuisine_valid
 	- utter_ask_pricerange
 * restaurant_search{"price": "2"}
 	- slot {"price" : "2"}
@@ -56,11 +61,12 @@
 * restaurant_search
     - utter_ask_location
 * restaurant_search{"location": "delhi"}
-	- action_check_location
     - slot{"location": "delhi"}
+	- action_check_location
     - utter_ask_cuisine
 * restaurant_search{"cuisine": "chinese"}
     - slot{"cuisine": "chinese"}
+	- action_cuisine_valid
     - action_restaurant
     - slot{"location": "delhi"}
     - export
@@ -75,6 +81,7 @@
     - utter_ask_cuisine
 * restaurant_search{"cuisine": "chinese"}
     - slot{"cuisine": "chinese"}
+	- action_cuisine_valid
 	- utter_ask_pricerange
 * restaurant_search{"price": "3"}
 	- slot {"price" : "3"}
@@ -101,11 +108,12 @@
 * restaurant_search
     - utter_ask_location
 * restaurant_search
-    - action_check_location
-    - slot{"location": null}
+    - slot{"location": "mumbai"}
+	- action_check_location
     - utter_ask_cuisine
 * restaurant_search{"cuisine": "chinese"}
     - slot{"cuisine": "chinese"}
+	- action_cuisine_valid
     - utter_ask_pricerange
 * restaurant_search
     - action_restaurant

@@ -9,7 +9,9 @@
     "entity_location",
     "entity_cuisine",
     "entity_price",
+    "entity_email",
     "slot_cuisine_0",
+    "slot_email_0",
     "slot_location_0",
     "slot_price_0",
     "prev_action_listen",
@@ -23,6 +25,8 @@
     "prev_utter_ask_cuisine",
     "prev_action_restaurant",
     "prev_utter_ask_pricerange",
-    "prev_action_check_location"
+    "prev_action_check_location",
+    "prev_action_cuisine_valid",
+    "prev_action_validate_email"
   ]
 }

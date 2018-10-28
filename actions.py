@@ -45,19 +45,56 @@ class ActionSearchRestaurants(Action):
 		dispatcher.utter_message("-----"+response)
 		return [SlotSet('location',loc)]
 
+class ActionCuisineValidation(Action):
+	def name(self):
+		return 'action_cuisine_valid'
+		
+	def run(self, dispatcher, tracker, domain):
+		list = ["chinese","mexican","american","italian","south indian","north indian"]
+		cuisine = tracker.get_slot('cuisine')
+		if cuisine is not None:
+			if cuisine.lower() in list:
+				return[SlotSet('cuisine',cuisine)]
+			else:
+				dispatcher.utter_message("invalid Cuisine, not in the list")
+				return[SlotSet('cuisine',None)]
+		else:
+			dispatcher.utter_message("Please enter valid cuisine")
+			return[SlotSet('cuisine', None)]			
+
+			
 class ActionCheckLocation(Action):
 	def name(self):
 		return 'action_check_location'
 		
 	def run(self, dispatcher, tracker, domain):
 		loc = tracker.get_slot('location')
-		tier1_tier2 = ['Agra','Ajmer','Aligarh','Allahabad','Amravati','Amritsar','Asansol','Aurangabad','Bareilly','Belgaum','Bhavnagar','Bhiwandi','Bhopal','Bhubaneswar','Bikaner','Bokaro Steel City','Chandigarh','Coimbatore','Cuttack','Dehradun','Dhanbad','Durg-Bhilai Nagar','Durgapur','Erode','Faridabad','Firozabad','Ghaziabad','Gorakhpur','Gulbarga','Guntur','Gurgaon','Guwahati‚ Gwalior','Hubli-Dharwad','Indore','Jabalpur','Jaipur','Jalandhar','Jammu','Jamnagar','Jamshedpur','Jhansi','Jodhpur','Kannur','Kanpur','Kakinada','Kochi','Kottayam','Kolhapur','Kollam','Kota','Kozhikode','Kurnool','Lucknow','Ludhiana','Madurai','Malappuram','Mathura','Goa','Mangalore','Meerut','Moradabad','Mysore','Nagpur','Nanded','Nashik','Nellore','Noida','Palakkad','Patna','Pondicherry','Raipur','Rajkot','Rajahmundry','Ranchi','Rourkela','Salem','Sangli','Siliguri','Solapur','Srinagar','Sultanpur','Surat','Thiruvananthapuram','Thrissur','Tiruchirappalli','Tirunelveli','Tiruppur','Ujjain','Bijapur','Vadodara','Varanasi','Vasai-Virar City','Vijayawada','Visakhapatnam','Warangal','Ahmedabad','Bangalore','Chennai','Delhi','Hyderabad','Kolkata','Mumbai','Pune']
+		tier1_tier2 = ['agra','ajmer','aligarh','allahabad','amravati','amritsar','asansol','aurangabad','bareilly','belgaum','bhavnagar','bhiwandi','bhopal','bhubaneswar','bikaner','bokaro steel city','chandigarh','coimbatore','cuttack','dehradun','dhanbad','durg-bhilai nagar','durgapur','erode','faridabad','firozabad','ghaziabad','gorakhpur','gulbarga','guntur','gurgaon','guwahati‚ gwalior','hubli-dharwad','indore','jabalpur','jaipur','jalandhar','jammu','jamnagar','jamshedpur','jhansi','jodhpur','kannur','kanpur','kakinada','kochi','kottayam','kolhapur','kollam','kota','kozhikode','kurnool','lucknow','ludhiana','madurai','malappuram','mathura','goa','mangalore','meerut','moradabad','mysore','nagpur','nanded','nashik','nellore','noida','palakkad','patna','pondicherry','raipur','rajkot','rajahmundry','ranchi','rourkela','salem','sangli','siliguri','solapur','srinagar','sultanpur','surat','thiruvananthapuram','thrissur','tiruchirappalli','tirunelveli','tiruppur','ujjain','bijapur','vadodara','varanasi','vasai-virar city','vijayawada','visakhapatnam','warangal','ahmedabad','bangalore','chennai','delhi','hyderabad','kolkata','mumbai','pune']
 		msg=""
-		if (loc in tier1_tier2):
+		if loc in tier1_tier2:
 			msg="Glad to inform we operate in this city!"
+			dispatcher.utter_message("----"+msg)
+			return [SlotSet('location',loc)]
 		else:
 			msg="We do not operate in that area yet!"
+			dispatcher.utter_message("----"+msg)
+			return [SlotSet('location','None')]
 		
-		dispatcher.utter_message("----"+msg)
-		return [SlotSet('location',loc)]
+		
+class ActionValidateEmail(Action):
+	def name(self):
+		return 'action_validate_email'
+		
+	def run(self, dispatcher, tracker, domain):
+		pattern = "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)"
+		tracker_email = tracker.get_slot('email')
+		if tracker_email is not None:
+			if re.search("(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)",tracker_email):
+				return[SlotSet('email',tracker_email)]
+			else:
+				dispatcher.utter_message("Invalid email , please validate and re-enter")
+				return[SlotSet('email',None)]
+		else:
+			dispatcher.utter_message("Re-tpye email again !! ")
+			return[SlotSet('email', None)]
 			
