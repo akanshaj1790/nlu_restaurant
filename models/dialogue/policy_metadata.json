@@ -3,8 +3,8 @@
     "action_listen": {
       "slots": [
         "cuisine",
-        "location",
-        "price"
+        "price",
+        "location"
       ]
     },
     "utter_ask_pricerange": {
@@ -24,18 +24,18 @@
     "action_check_location": {
       "slots": [
         "cuisine",
-        "location",
-        "price"
-      ]
-    },
-    "action_restaurant": {
-      "slots": [
+        "price",
         "location"
       ]
     },
     "action_cuisine_valid": {
       "slots": [
         "cuisine"
+      ]
+    },
+    "action_restaurant": {
+      "slots": [
+        "location"
       ]
     },
     "action_send_mail": {
